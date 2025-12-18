@@ -1,0 +1,11 @@
+uvicorn==0.34.0
+fastapi
+joblib
+numpy
+scikit-learn
+jinja2
+pydantic
+python-multipart
+pandas
+
+
