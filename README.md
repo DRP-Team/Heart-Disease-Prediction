@@ -1,5 +1,11 @@
 
-Deployed Website URL= https://heart-disease-prediction-machine-learning.onrender.com/
+Deployed Website URL= https://heart-disease-prediction.com/
+
+No	Name	ID No
+1	Saron Sileshi	   3415/14
+2	Mistrawit Engda	4365/14
+3	Mihret Semagn	   4393/14
+4	Nebiat Getnet	   4405/14
 
 # Heart Disease Prediction FastAPI
 
@@ -19,7 +25,7 @@ This repository contains a FastAPI application that uses a Support Vector Machin
 1. Clone this repository to your local machine:
 
 ```bash
-git clone [https://github.com/yourusername/heart-disease-prediction-api.git](https://github.com/hatbsh-kw/Heart_Disease_Prediction-Machine-Learning.git)
+git clone [https://github.com/yourusername/heart-disease-prediction-api.git](https://github.com/DRP-Team/Heart_Disease_Prediction.git)
 ```
 
 2. Navigate into the project directory:
