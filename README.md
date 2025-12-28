@@ -1,6 +1,6 @@
 
 
-No  	Name	           ID           
+No         Name	                ID           
 
 1	Saron Sileshi	   3415/14
 
