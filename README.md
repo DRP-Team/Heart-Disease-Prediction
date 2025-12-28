@@ -1,7 +1,7 @@
 
-Deployed Website URL= https://heart-disease-prediction.com/
 
-No	Name	ID No
+No  	Name	           ID           
+
 1	Saron Sileshi	   3415/14
 2	Mistrawit Engda	4365/14
 3	Mihret Semagn	   4393/14
@@ -158,4 +158,4 @@ Expected Response:
   "prediction": "Absence"
 }
 ```
-uvicorn app:app --reload ,,,,,,,,,,,http://127.0.0.1:8000
+ 
