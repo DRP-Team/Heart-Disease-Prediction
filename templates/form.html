@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/download.jpg" type="image/jpg">
+    <title>Heart Disease Prediction</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url("static/images/microsoftteams-image_51 (1).png");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Logo at the Top Left Corner */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: auto;
+        }
+
+        /* Title */
+        h1 {
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+        }
+
+        /* Layout Container */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Left-side images */
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-left: 0; /* Align images to the left */
+            position: relative;
+        }
+
+        .side-image {
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .side-image:hover {
+            width: 300px;
+        }
+
+       /* Feature Description */
+.feature-desc {
+    display: none;
+    background: rgba(0, 0, 0, 0.8); /* Slightly darker for better readability */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    position: absolute;
+    left: 250px; /* Positioned to the right of the first image */
+    bottom: 0;
+    width: 300px;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+        .feature-btn {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Show feature description on hover or click */
+.feature-btn:hover + .feature-desc,
+.feature-btn:focus + .feature-desc {
+    display: block;
+}
+
+
+        /* Form Container */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            border: #333 solid;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        input[type="submit"] {
+            grid-column: span 2;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+        }
+
+        footer a {
+            color: #b79b0c;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: 80vh; /* Set a fixed height to enable scrolling */
+        padding: 10px; /* Add some padding */
+    }
+.logo{
+   left:0px;
+   bottom: 20px;
+    
+}
+    .image-container {
+        flex-direction: column; /* Stack images vertically on mobile */
+        align-items: center; /* Center-align images */
+        gap: 10px; /* Add some space between images */
+    }
+
+    .side-image {
+        width: 100%; /* Full width for images on mobile */
+        max-width: 250px; /* Limit maximum width */
+    }
+
+    .feature-desc {
+        position: static; /* Reset positioning for mobile */
+        width: 100%; /* Full width on mobile */
+        margin-top: 10px; /* Add some space above */
+        background: rgba(0, 0, 0, 0.9); /* Darker background for better contrast */
+        border-radius: 8px;
+        padding: 15px;
+        font-size: 12px; /* Slightly smaller font for mobile */
+    }
+
+    .feature-btn:hover + .feature-desc,
+    .feature-btn:focus + .feature-desc {
+        display: block; /* Ensure it remains visible on mobile */
+    }
+
+    /* Ensure the form is scrollable if needed */
+    form {
+        width: 100%;
+        max-width: 100%; /* Allow the form to take full width */
+        margin-top: 20px; /* Add space between images and form */
+    }
+}
+            
+        
+    </style>
+</head>
+<body>
+
+    <!-- Logo -->
+    <img src="/static/images/BackgroundEraser_20250206_145909114.png" alt="Logo" class="logo">
+
+    <!-- Title -->
+    <h1>Heart Disease Prediction Form</h1>
+
+    <div class="container">
+        <!-- Left Side Images -->
+        <div class="image-container">
+            <img src="/static/images/download%20%281%29.jpg" alt="Heart 1" class="side-image">
+            <img src="/static/images/download.jpg" alt="Heart 2" class="side-image">
+
+            <!-- Feature Description -->
+            <button class="feature-btn">Feature Description</button>
+
+            <p class="feature-desc">
+                <span style="font-weight: bold;">Feature Descriptions:</span>
+                <br>
+                I. Age: The patient's age.
+                <br>
+                II. Sex: 0 = Female, 1 = Male.
+                <br>
+                III. Chest Pain Type 0-4: Different types of pain.o	1 = Typical angina
+                ,	2 = Atypical angina
+                ,	3 = Non-anginal pain
+                ,	4 = Asymptomatic
+                
+                <br>
+                IV. Resting Blood Pressure: Blood pressure in mm Hg .
+                <br>
+                V. Serum Cholesterol: Cholesterol levels in mg/dl.
+                <br>
+                VI. Fasting Blood Sugar: 0 if &lt;120mg/dl, 1 if &gt;120mg/dl.
+                <br>
+                VII. Resting ECG: 0-2, measures heart's electrical activity.
+                ,0 = Normal, 1 = ST-T wave abnormality, 2 = Left ventricular hypertrophy
+
+                <br>
+                VIII. Max Heart Rate: Maximum HR achieved.
+                <br>
+                IX. Exercise Induced Angina: 0 = No, 1 = Yes.
+                <br>
+                X. Oldpeak: ST depression induced by exercise.
+                <br>
+                XI. Slope: 0-3, ST segment slope. 1 = Upsloping ,2 = Flat
+            ,3 = Downsloping
+             <br>
+                XII. Major Vessels: 0-3, Number of major vessels colored.detected by fluoroscopy
+                <br>
+                XIII. Thalassemia(3|6|7): Type of blood disorder.3 = Normal,6 = Fixed defect,7 = Reversible defect
+                
+            </p>
+        </div>
+
+        <!-- Form -->
+        <form action="/predict/" method="post">
+            <div class="form-grid">
+                <div>
+                    <label for="age">Age:</label>
+                    <input type="number" step="0.1" name="age" required>
+                </div>
+                <div>
+                    <label for="sex">Sex (0(F) or 1(M)):</label>
+                    <input type="number" name="sex" required>
+                </div>
+                <div>
+                    <label for="chest_pain_type">Chest Pain Type (1-4):</label>
+                    <input type="number" name="chest_pain_type" required>
+                </div>
+                <div>
+                    <label for="resting_blood_pressure">Resting Blood Pressure:</label>
+                    <input type="number" step="0.1" name="resting_blood_pressure" required>
+                </div>
+                <div>
+                    <label for="serum_cholestoral">Serum Cholestoral:</label>
+                    <input type="number" step="0.1" name="serum_cholestoral" required>
+                </div>
+                <div>
+                    <label for="fasting_blood_sugar">Fasting Blood Sugar (0 or 1):</label>
+                    <input type="number" name="fasting_blood_sugar" required>
+                </div>
+                <div>
+                    <label for="resting_ecg">Resting ECG (0-2):</label>
+                    <input type="number" name="resting_ecg" required>
+                </div>
+                <div>
+                    <label for="max_heart_rate">Max Heart Rate:</label>
+                    <input type="number" step="0.1" name="max_heart_rate" required>
+                </div>
+                <div>
+                    <label for="exercise_induced_angina">Exercise Induced Angina (0 or 1):</label>
+                    <input type="number" name="exercise_induced_angina" required>
+                </div>
+                <div>
+                    <label for="oldpeak">Oldpeak:</label>
+                    <input type="number" step="0.1" name="oldpeak" required>
+                </div>
+                <div>
+                    <label for="slope">Slope (1-2):</label>
+                    <input type="number" name="slope" required>
+                </div>
+                <div>
+                    <label for="num_major_vessels">Number of Major Vessels (0-3):</label>
+                    <input type="number" name="num_major_vessels" required>
+                </div>
+                <div>
+                    <label for="thal">Thalassemia(3|6|7):</label>
+                    <input type="number" name="thal" required>
+                </div>
+                <div>
+                    <input type="submit" value="Predict">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; DRP-Team 2025. All Rights Reserved. | <a href="ebial430@gmail.com">Contact</a></p>
+    </footer>
+
+</body>
+</html>
